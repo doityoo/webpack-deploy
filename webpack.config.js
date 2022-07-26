@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: './src/script.js',
   output: {
-    path: path.resolve(__dirname, 'docs'), // './dist'의 절대 경로를 리턴합니다.
+    path: path.resolve(__dirname, 'dist'), // './dist'의 절대 경로를 리턴합니다.
     filename: 'app.bundle.js',
   },
   module: {
@@ -27,9 +27,9 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
     template: path.resolve(__dirname, "src", "index.html")
   })],
-  // devServer: {
-  //   contentBase: __dirname + '/docs/',
-  //   host: 'localhost',
-  //   port: 3000,
-  // },
+  devServer: {
+    contentBase: __dirname + '/dist/',
+    host: 'localhost',
+    port: 3000,
+  },
 };
